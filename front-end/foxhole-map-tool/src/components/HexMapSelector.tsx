@@ -3,19 +3,26 @@ import { MapContainer, ImageOverlay} from "react-leaflet";
 import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import ResetViewButton from "./ResetViewButton";
+import DotOverlay from "./DotOverlay";
+
+
 
 // List of hexes
 const hexRegions = [
     { name: "Acrithia", path: "/src/assets/images/hexes/MapAcrithiaHex.png" },
     { name: "Deadlands", path: "/src/assets/images/hexes/MapDeadlandsHex.png"},
-    { name: "Endless Shore", path: "/src/assets/images/hexes/MapEndlessShoreHex.png"}
+    { name: "Endless Shore", path: "/src/assets/images/hexes/MapEndlessShoreHex.png"},
+    { name: "Farranac Coast", path: "/src/assets/images/hexes/MapFarranacCoastHex.png"}
 ];
 
 // Default bounds for image
-const defaultBounds: L.LatLngBoundsExpression = [
+const defaultBounds: [[number, number], [number, number]] = [
     [0,0],
     [888,1024],
 ];
+
+//conversion
+const pixelsPerMeter= 0.47;
 
 
 
@@ -60,6 +67,7 @@ const HexMapSelector: React.FC = () => {
                     bounds={defaultBounds}
                     />
                     <ResetViewButton bounds={defaultBounds} />
+                    <DotOverlay bounds={defaultBounds} pixelsPerMeter={pixelsPerMeter}/>
                 </MapContainer>
             </div>
         </div>
