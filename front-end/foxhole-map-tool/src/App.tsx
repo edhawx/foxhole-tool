@@ -20,7 +20,7 @@ const App: React.FC = () => {
                     padding: "10px",
                 }}
             >
-                <h1 style={{ margin: 0 }}>Foxhole Map Tool</h1>
+                <h1 style={{ margin: 0 }}>Arty Spotter</h1>
             </header>
 
             {/* Main Content */}
