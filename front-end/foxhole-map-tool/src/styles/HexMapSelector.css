@@ -1,0 +1,53 @@
+/* General Container */
+.hex-map-container {
+    text-align: center;
+    margin: 20px auto;
+    max-width: 1024px;
+}
+
+/* Dropdown and Map */
+.map-container {
+    height: 888px;
+    width: 1024px;
+    max-width: 100%;
+    margin: 20px auto;
+}
+
+/* Instructions - Default */
+.instructions {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: left;
+    font-size: 14px;
+    line-height: 1.5;
+    border: 1px solid lightgray;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: black;
+    color: white;
+    width: 250px;
+    z-index: 1000;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    /* Instructions Below Map */
+    .instructions {
+        position: static;
+        transform: none;
+        margin: 20px auto;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    /* Map Adjustment for Smaller Screens */
+    .map-container {
+        width: 100%; /* Full width for smaller screens */
+        max-width: 800px; /* Ensure it doesn’t go too wide */
+        aspect-ratio: 1024 / 888; /* Maintain the correct aspect ratio */
+        margin: 20px auto;
+        background-color: #333; /* Fallback background */
+    }
+}
