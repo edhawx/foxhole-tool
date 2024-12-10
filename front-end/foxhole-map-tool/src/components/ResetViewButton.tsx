@@ -9,7 +9,8 @@ interface ResetViewButtonProps {
 const ResetViewButton: React.FC<ResetViewButtonProps> = ({bounds}) =>{
     const map = useMap();
 
-    const resetView = () => {
+    const resetView = (e: React.MouseEvent<HTMLButtonElement>) => {
+        e.stopPropagation();
         map.fitBounds(bounds, {padding: [50,50]});
     };
 
@@ -22,10 +23,11 @@ const ResetViewButton: React.FC<ResetViewButtonProps> = ({bounds}) =>{
         top: "10px",
         right: "10px",
         padding: "10px",
-        background: "white",
+        background: "black",
         border: "1px solid #ccc",
         borderRadius: "4px",
         cursor: "pointer",
+        pointerEvents:"auto",
         }}
         >
             Reset View

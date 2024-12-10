@@ -66,3 +66,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.custom-map-container {
+  background-color: #333333 !important; /* Ensure the entire map container has a dark background */
+}
+
+.leaflet-container {
+  background-color: #333333 !important; /* Override Leaflet's default white background */
+}

@@ -30,6 +30,12 @@ const DotOverlay: React.FC<DotOverlayProps> = ({ bounds, pixelsPerMeter }) => {
 
   const map = useMapEvents({
     click: (e) => {
+
+      // Prevents placing dots if click is on UI element
+      if ((e.originalEvent.target as HTMLElement).closest("button")){
+        return;
+      }
+
       // Prevent placing dots while dragging
       if (map.dragging.enabled()) return;
 
@@ -105,9 +111,10 @@ const DotOverlay: React.FC<DotOverlayProps> = ({ bounds, pixelsPerMeter }) => {
         <div
           style={{
             position: "absolute",
-            top: "10px",
+            fontSize: "20px",
+            top: "100px",
             left: "10px",
-            backgroundColor: "white",
+            backgroundColor: "black",
             padding: "5px 10px",
             border: "1px solid #ccc",
             borderRadius: "5px",

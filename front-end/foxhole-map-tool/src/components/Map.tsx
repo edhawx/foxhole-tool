@@ -13,17 +13,32 @@ const Map: React.FC = () => {
     };
 
     return (
-        <MapContainer
-            center={[0, 0]} // Initial center of the map
-            zoom={2} // Initial zoom level
-            style={{ height: "90vh", width: "100%" }}
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "100vh",
+                backgroundColor: "#333333", // Dark gray background for the whole page
+            }}
         >
-            <TileLayer
-                url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution="© OpenStreetMap contributors"
-            />
-            <HandleClick />
-        </MapContainer>
+            <MapContainer
+                center={[0, 0]} // Initial center of the map
+                zoom={2} // Initial zoom level
+                style={{
+                    height: "90vh",
+                    width: "90%", // Adjust as needed for screen coverage
+                    backgroundColor: "#333333", // Dark background for the map
+                }}
+                className="custom-map-container"
+            >
+                <TileLayer
+                    url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    attribution="© OpenStreetMap contributors"
+                />
+                <HandleClick />
+            </MapContainer>
+        </div>
     );
 };
 
